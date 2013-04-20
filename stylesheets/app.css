@@ -5949,6 +5949,14 @@ table tfoot tr td {
   max-width: 800px;
 }
 
+/* Custom Sass Mixins */
+/* Convert PX units to REMs and add px fallback of property.
+Ex: @include rem(line-height, 25px);
+*/
+/* Helper to add propoerty across browser vendors */
+/* Clear Fix Helper */
+/* Helper to style all Link Hover/Active/Focus */
+/* Helper to return css required for left overlap browser bars */
 /**
 * app-wordpress.css
 * 

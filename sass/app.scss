@@ -1,8 +1,6 @@
+
 // Global Foundation Settings
 @import "settings";
-
-// Mixins
-@import "mixins";
 
 //@import "compass"; //Loaded from Gem
 @import "normalize";
@@ -49,6 +47,9 @@
 // @import "foundation/components/thumbs";
 // @import "foundation/components/tooltips";
 // @import "foundation/components/dropdown";
+
+// Mixins
+@import "mixins";
 
 // Pressoholics Framework Core
 @import "prso_framework/app-wordpress";

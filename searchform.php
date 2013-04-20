@@ -3,10 +3,10 @@
   
     <div class="row collapse hide-for-medium-portrait">
     	<form action="<?php echo home_url( '/' ); ?>" method="get">
-	      <div class="eight mobile-three columns">
+	      <div class="large-8 small-8 columns">
 	        <input type="text" id="search" placeholder="Search" name="s" value="<?php the_search_query(); ?>" />
 	      </div>
-	      <div class="four mobile-one columns">
+	      <div class="large-4 small-4 columns">
 	        <button type="submit" id="search-button" class="postfix button">Search</a>
 	      </div>
   		</form>

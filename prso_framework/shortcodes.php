@@ -44,7 +44,7 @@ class PrsoThemeShortcodes {
 		$args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $post->ID ); 
 		$attachments = get_posts($args);
 		if ($attachments) {
-			$output = '<ul class="block-grid four-up">';
+			$output = '<ul class="large-block-grid-4">';
 			foreach ( $attachments as $attachment ) {
 				$output .= '<li>';
 				$att_title = apply_filters( 'the_title' , $attachment->post_title );

@@ -29,7 +29,7 @@
 			</div>
 			
 			<!-- To display thumbnail of previous and next image in the photo gallery -->
-			<ul class="block-grid two-up">
+			<ul class="large-block-grid-2">
 				<li class="next pull-left"><?php next_image_link() ?></li>
 				<li class="previous pull-right"><?php previous_image_link() ?></li>
 			</ul>

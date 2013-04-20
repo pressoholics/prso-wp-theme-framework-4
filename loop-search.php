@@ -1,4 +1,4 @@
-<div id="main" class="eight columns clearfix" role="main">
+<div id="main" class="large-8 columns clearfix" role="main">
 				
 	<h1 class=""><span>Search Results for:</span> <?php echo esc_attr(get_search_query()); ?></h1>
 

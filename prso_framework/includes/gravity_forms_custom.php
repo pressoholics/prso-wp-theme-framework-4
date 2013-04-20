@@ -158,7 +158,7 @@ function prso_theme_gform_field_content( $content, $field, $value, $lead_id, $fo
 			ob_start();
 			?>
 			<div class='row'>
-				<div class='<?php echo apply_filters( 'prso_theme_gform_validation_wrapper_class', 'twelve columns', $field, $form_id ); ?>'>
+				<div class='<?php echo apply_filters( 'prso_theme_gform_validation_wrapper_class', 'large-12 columns', $field, $form_id ); ?>'>
 					<small class='error gfield_description validation_message'>%s</small>
 				</div>
 			</div>
@@ -370,13 +370,13 @@ function prso_theme_gform_get_address_field( $field, $value, $lead_id, $form_id 
     }
     
     //Wrap city in foundation divs
-    $city = "<div class='". apply_filters( 'prso_theme_gforms_address_city_class', 'five columns', $field, $form_id ) ."'>{$city}</div>";
+    $city = "<div class='". apply_filters( 'prso_theme_gforms_address_city_class', 'large-5 columns', $field, $form_id ) ."'>{$city}</div>";
     
     //Wrap state in foundation divs
-    $state = "<div class='". apply_filters( 'prso_theme_gforms_address_state_class', 'four columns', $field, $form_id ) ."'>{$state}</div>";
+    $state = "<div class='". apply_filters( 'prso_theme_gforms_address_state_class', 'large-4 columns', $field, $form_id ) ."'>{$state}</div>";
     
     //Wrap ZIP in foundation divs
-    $zip = "<div class='". apply_filters( 'prso_theme_gforms_address_zip_class', 'three columns', $field, $form_id ) ."'>{$zip}</div>";
+    $zip = "<div class='". apply_filters( 'prso_theme_gforms_address_zip_class', 'large-3 columns', $field, $form_id ) ."'>{$zip}</div>";
     
     $inputs = $address_display_format == "zip_before_city" ? $street_address . $street_address2 . $div_row . $zip . $city . $state . "</div>" . $country : $street_address . $street_address2 . $div_row . $city . $state . $zip . "</div>" . $country;
 

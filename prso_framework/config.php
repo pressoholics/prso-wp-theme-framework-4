@@ -27,11 +27,10 @@ class PrsoThemeConfig {
  * 9. Tag cloud widget args
  * 10. Merge scripts
  * 11. Merge stylesheets
- * 12. Add main nav search box
- * 13. Custom pagination
- * 14. Cufon font replacement
- * 15. Backstretch image background
- * 16. Theme Admin Page Options		- IMPORTANT MUST USE!
+ * 12. Custom pagination
+ * 13. Cufon font replacement
+ * 14. Backstretch image background
+ * 15. Theme Admin Page Options		- IMPORTANT MUST USE!
  *
  */
  
@@ -418,20 +417,7 @@ class PrsoThemeConfig {
 	protected $theme_style_merge_exceptions = array();
 
 /******************************************************************
- * 12. 	Merge Stylesheets
- *		Adds a WP search field to the end of the main nav
- *****************************************************************/
-
- 	/**
- 	* $this->theme_nav_search
- 	*
- 	* NOTE :: Set to FALSE to disable the main nav search field
- 	*
-	*/
-	protected $theme_nav_search = TRUE; 
-
-/******************************************************************
- * 13. 	Custom Pagination
+ * 12. 	Custom Pagination
  *		Control/Override the 'prso_pagination' action which handles pagination in theme files
  *****************************************************************/
 
@@ -453,7 +439,7 @@ class PrsoThemeConfig {
 	protected $theme_custom_pagination_override = NULL;
 
 /******************************************************************
- * 14. 	Cufon font replacement
+ * 13. 	Cufon font replacement
  *		
  *****************************************************************/
 
@@ -473,7 +459,7 @@ class PrsoThemeConfig {
 	//protected $theme_cufon_script_args = array();
 
 /******************************************************************
- * 15. 	Backstretch background image script
+ * 14. 	Backstretch background image script
  *		
  *****************************************************************/
 
@@ -493,7 +479,7 @@ class PrsoThemeConfig {
 	//protected $theme_backstretch_script_args = array();
 
 /******************************************************************
- * 16. 	Theme Admin Page Options - IMPORTANT
+ * 15. 	Theme Admin Page Options - IMPORTANT
  *		Define some core values required to setup your theme's 
  *		admin options page
  *****************************************************************/ 

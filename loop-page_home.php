@@ -1,4 +1,4 @@
-<div id="main" class="twelve columns" role="main">
+<div id="main" class="large-12 columns" role="main">
 					
 	<article role="article">
 		
@@ -8,7 +8,7 @@
 
 		<section class="row post_content">
 		
-			<div class="home-main eight columns">
+			<div class="home-main large-8 columns">
 		
 				<?php the_content(); ?>
 				

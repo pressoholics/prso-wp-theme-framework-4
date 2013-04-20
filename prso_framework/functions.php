@@ -43,7 +43,7 @@
  * 29. strip_empty_classes	-	Deletes empty classes and removes the sub menu class_exists
  * 30. merge_scripts	-	Merges and minifies scripts, define scripts to merge via $theme_script_merge_args in config.php
  * 31. merge_styles	-	Merges and minifies stlyesheets, define options via $theme_style_merge_args in config.php
- * 32. add_search_to_nav	-	Adds a wp search field to the end of the main nav, enable via $theme_nav_search in config.php
+ * 32. REMOVED -> add_search_to_nav	-	REMOVED IN v4.1.1
  * 33. custom_pagination	-	Outputs custom pagination to template files via 'prso_pagination' action
  * 34. post_class_filter	-	Filter post classes printed by worpdress via post_class();
  * 35. gravity_forms_customizer		-	Includes gravity_forms_custom.php from inc folder
@@ -145,9 +145,6 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
  		
  		//Merges and minifies stylesheets
  		add_action( 'wp_print_styles', array($this, 'merge_styles') );
- 		
- 		//Adds a WP search field to end of main nav
- 		add_filter( 'wp_nav_menu_items', array($this, 'add_search_to_nav'), 10, 2 );
  		
  		//Custom prso theme framework pagination
  		add_action( 'prso_pagination', array($this, 'custom_pagination'), 10, 2 );
@@ -814,11 +811,11 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
 		$o = '<div class="clearfix"><form action="' . get_option('siteurl') . '/wp-pass.php" method="post">
 		' . __( "<p>This post is password protected. To view it please enter your password below:</p>" ) . '
 		<div class="row collapse">
-	        <div class="twelve columns"><label for="' . $label . '">' . __( "Password:" ) . ' </label></div>
-	        <div class="eight columns">
+	        <div class="large-12 columns"><label for="' . $label . '">' . __( "Password:" ) . ' </label></div>
+	        <div class="large-8 columns">
 	            <input name="post_password" id="' . $label . '" type="password" size="20" class="input-text" />
 	        </div>
-	        <div class="four columns">
+	        <div class="large-4 columns">
 	            <input type="submit" name="Submit" class="postfix button nice blue radius" value="' . esc_attr__( "Submit" ) . '" />
 	        </div>
 		</div>
@@ -1108,55 +1105,6 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
 			
 		}
 		
-	}
-	
-	/**
-	* add_search_to_nav
-	*
-	* Called during wp_nav_items filter, appends a wp search form onto the end of the main_nav
-	*
-	* Will only add the search nav to the main_nav, all other navs will be left alone
-	*
-	* Param
-	*		To enable/disable the search field use the $theme_nav_search var in config.php
-	*		To change the slug of the menu used, define it using $theme_nav_search_slug - OPTIONAL
-	*
-	* @access 	public
-	* @author	Ben Moody
-	*/
-	public function add_search_to_nav( $items, $args ) {
-		
-		//Init vars
-		$activate_search 	= FALSE;
-		$nav_slug			= 'main_nav';
-		
-		//Detect the config setting
-		if( isset($this->theme_nav_search) && is_bool($this->theme_nav_search) ) {
-			$activate_search = $this->theme_nav_search;
-		}
-		if( isset($this->theme_nav_search_slug) ) {
-			$nav_slug = esc_attr($this->theme_nav_search_slug);
-		}
-		
-		//Add only to main nav
-		if( isset($args->menu) && $args->menu === $nav_slug && $activate_search == TRUE ) {
-			
-			ob_start();
-			?>
-			<li class="nav-search" >
-				<form action="<?php echo home_url( '/' ); ?>" method="get">
-			      <div class="twelve columns">
-			        <input type="text" id="search" placeholder="Search" name="s" value="<?php the_search_query(); ?>" />
-			      </div>
-		  		</form>
-			</li>
-			<?php
-			$items.= ob_get_contents();
-			ob_end_clean();
-			
-		}
-		
-		return $items;
 	}
 	
 	/**

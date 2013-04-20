@@ -1,4 +1,4 @@
-<div id="main" class="eight columns clearfix" role="main">
+<div id="main" class="large-8 columns clearfix" role="main">
 				
 	<h1 class="author_title h2">
 		<span><?php _e("Posts By:", "bonestheme"); ?></span> 

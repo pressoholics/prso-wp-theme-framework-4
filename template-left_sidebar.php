@@ -8,7 +8,7 @@ Template Name: Left Sidebar Page
 
 <?php get_sidebar(); // sidebar 1 ?>
 
-<div id="main" class="eight columns clearfix" role="main">
+<div id="main" class="large-8 columns clearfix" role="main">
 
 	<?php get_template_part( 'loop', 'page' ); ?>
 

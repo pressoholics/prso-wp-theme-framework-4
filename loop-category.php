@@ -1,4 +1,4 @@
-<div id="main" class="eight columns clearfix" role="main">
+<div id="main" class="large-8 columns clearfix" role="main">
 
 	<h1 class="category_title h2">
 		<span><?php _e("Posts Categorized:", "bonestheme"); ?></span> <?php single_cat_title(); ?>

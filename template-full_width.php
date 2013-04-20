@@ -6,7 +6,7 @@ Template Name: Full Width Page
 
 <?php get_header(); ?>
 
-<div id="main" class="twelve columns clearfix" role="main">
+<div id="main" class="large-12 columns clearfix" role="main">
 
 	<?php get_template_part( 'loop', 'page' ); ?>
 

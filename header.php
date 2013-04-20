@@ -64,7 +64,7 @@
 			<!-- Content Div !-->
 			<div id="content">
 				
-				<div class="twelve columns">
+				<div class="large-12 columns">
 					<header role="banner" id="top-header">
 						
 						<div class="siteinfo">
@@ -81,23 +81,49 @@
 							<h1><a class="brand" id="logo" href="<?php echo get_bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
 							<h4 class="subhead"><?php echo get_bloginfo ( 'description' ); ?></h4>
 						</div>
-				
-						<?php 
-							// Adjust using Menus in Wordpress Admin 
-							if( class_exists('main_nav_walker') ) {
-								wp_nav_menu( 
-							    	array( 
-							    		'menu' 				=> 'main_nav', /* menu name */
-							    		'menu_class' 		=> 'top-nav nav-bar hide-for-small hide-for-medium-portrait',
-							    		'theme_location' 	=> 'main_nav', /* where in the theme it's assigned */
-							    		'container' 		=> 'false', /* container tag */
-							    		'depth' 			=> '2',
-							    		'walker' 			=> new main_nav_walker(),
-							    		'fallback_cb'		=> false
-							    	)
-							    );
-							}
-						?>
+
+						<nav class="top-bar nav-bar hide-for-small hide-for-medium-portrait">
+						  <ul class="title-area">
+						    <!-- Title Area -->
+						    <li class="name">
+						      <h1><a href="#">Top Bar Title </a></h1>
+						    </li>
+						    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+						    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+						  </ul>
+						
+						  <section class="top-bar-section">
+						    <!-- Left Nav Section -->
+						    <?php 
+								// Adjust using Menus in Wordpress Admin 
+								if( class_exists('main_nav_walker') ) {
+									wp_nav_menu( 
+								    	array( 
+								    		'menu' 				=> 'main_nav', /* menu name */
+								    		'menu_class' 		=> 'left',
+								    		'theme_location' 	=> 'main_nav', /* where in the theme it's assigned */
+								    		'container' 		=> 'false', /* container tag */
+								    		'depth' 			=> '4',
+								    		'walker' 			=> new main_nav_walker(),
+								    		'fallback_cb'		=> false
+								    	)
+								    );
+								}
+							?>
+							
+							<!-- Rigth Nav Section !-->
+							<ul class="right">
+								<li class="has-form" >
+									<form action="<?php echo home_url( '/' ); ?>" method="get">
+								      <div class="large-12 columns">
+								        <input type="text" id="search" placeholder="Search" name="s" value="<?php the_search_query(); ?>" />
+								      </div>
+							  		</form>
+								</li>
+							</ul>
+							
+						  </section>
+						</nav>
 						
 					</header> <!-- end header -->
 				</div>

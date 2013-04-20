@@ -1,5 +1,5 @@
 <!-- Sidebar Content !-->
-<div id="sidebar1" class="four columns clearfix" role="complementary">
+<div id="sidebar1" class="large-4 columns clearfix" role="complementary">
 				
 	<?php if ( !empty($post->post_excerpt) ) { ?> 
 	<div class="caption panel"><?php echo get_the_excerpt(); ?></div>

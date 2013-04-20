@@ -19,7 +19,7 @@ if( !class_exists('main_nav_walker') ) {
 	            
 	            // If the item has children, add the dropdown class for foundation
 	            if ( $args->has_children ) {
-	                $class_names = "has-flyout ";
+	                $class_names = "has-dropdown ";
 	            }
 	            
 	            $classes = empty( $item->classes ) ? array() : (array) $item->classes;
@@ -27,7 +27,7 @@ if( !class_exists('main_nav_walker') ) {
 	            $class_names .= join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
 	            $class_names = ' class="'. esc_attr( $class_names ) . '"';
 	           
-	            $output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
+	            $output .= $indent . '<li class="divider"></li><li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
 	
 	            $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
 	            $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
@@ -44,7 +44,7 @@ if( !class_exists('main_nav_walker') ) {
 	            $item_output .= $args->link_after;
 	            // if the item has children add the caret just before closing the anchor tag
 	            if ( $args->has_children ) {
-	                $item_output .= '</a><a href="#" class="flyout-toggle"><span> </span></a>';
+	                $item_output .= '</a>';
 	            }
 	            else{
 	                $item_output .= '</a>';
@@ -56,7 +56,7 @@ if( !class_exists('main_nav_walker') ) {
 	            
 	        function start_lvl(&$output, $depth) {
 	            $indent = str_repeat("\t", $depth);
-	            $output .= "\n$indent<ul class=\"flyout\">\n";
+	            $output .= "\n$indent<ul class=\"dropdown\">\n";
 	        }
 	            
 	        function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {

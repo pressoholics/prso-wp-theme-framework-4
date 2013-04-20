@@ -80,7 +80,7 @@ if( !function_exists('prso_theme_comments') ) {
 		<li <?php comment_class(); ?>>
 			<article id="comment-<?php comment_ID(); ?>" class="panel clearfix">
 				<div class="comment-author vcard row clearfix">
-	                <div class="twelve columns">
+	                <div class="large-12 columns">
 	                    <div class="
 	                        <?php
 	                        $authID = get_the_author_meta('ID');
@@ -92,10 +92,10 @@ if( !function_exists('prso_theme_comments') ) {
 	                        ?>
 	                    ">
 	                        <div class="row">
-	            				<div class="avatar two columns">
+	            				<div class="avatar large-2 columns">
 	            					<?php echo get_avatar($comment,$size='75',$default='' ); ?>
 	            				</div>
-	            				<div class="ten columns">
+	            				<div class="large-10 columns">
 	            					<?php printf(__('<h4 class="span8">%s</h4>'), get_comment_author_link()) ?>
 	            					<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time('F jS, Y'); ?> </a></time>
 	            					

@@ -1,4 +1,4 @@
-<div id="sidebar2" class="sidebar four columns" role="complementary">
+<div id="sidebar2" class="sidebar large-4 columns" role="complementary">
 
 	<div class="panel">
 

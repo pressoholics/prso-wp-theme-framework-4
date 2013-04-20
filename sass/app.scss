@@ -54,3 +54,12 @@
 // Pressoholics Framework Core
 @import "prso_framework/app-wordpress";
 @import "prso_framework/app-core";
+
+// Theme specific sass
+@import "theme_styles/_header.scss";
+@import "theme_styles/_footer.scss";
+@import "theme_styles/_typography.scss";
+@import "theme_styles/_colors.scss";
+@import "theme_styles/_forms.scss";
+@import "theme_styles/_shared.scss";
+@import "theme_styles/_sidebar.scss";

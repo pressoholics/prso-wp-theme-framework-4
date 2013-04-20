@@ -78,43 +78,39 @@ if( !function_exists('prso_theme_comments') ) {
 	function prso_theme_comments($comment, $args, $depth) {
 	   $GLOBALS['comment'] = $comment; ?>
 		<li <?php comment_class(); ?>>
-			<article id="comment-<?php comment_ID(); ?>" class="panel clearfix">
-				<div class="comment-author vcard row clearfix">
-	                <div class="large-12 columns">
-	                    <div class="
-	                        <?php
-	                        $authID = get_the_author_meta('ID');
-	                                                    
-	                        if($authID == $comment->user_id)
-	                            echo "panel callout";
-	                        else
-	                            echo "panel";
-	                        ?>
-	                    ">
-	                        <div class="row">
-	            				<div class="avatar large-2 columns">
-	            					<?php echo get_avatar($comment,$size='75',$default='' ); ?>
-	            				</div>
-	            				<div class="large-10 columns">
-	            					<?php printf(__('<h4 class="span8">%s</h4>'), get_comment_author_link()) ?>
-	            					<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time('F jS, Y'); ?> </a></time>
-	            					
-	            					<?php edit_comment_link(__('Edit'),'<span class="edit-comment">', '</span>'); ?>
-	                                
-	                                <?php if ($comment->comment_approved == '0') : ?>
-	                   					<div class="alert-box success">
-	                      					<?php _e('Your comment is awaiting moderation.') ?>
-	                      				</div>
-	            					<?php endif; ?>
-	                                
-	                                <?php comment_text() ?>
-	                                
-	                                <!-- removing reply link on each comment since we're not nesting them -->
-	            					<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-	                            </div>
-	                        </div>
-	                    </div>
-	                </div>
+			<article id="comment-<?php comment_ID(); ?>" class="clearfix">
+				<div class="comment-author vcard clearfix">
+                    <div class="
+                        <?php
+                        $authID = get_the_author_meta('ID');
+                                                    
+                        if($authID == $comment->user_id)
+                            echo "callout";
+                        ?>
+                    ">
+                        <div class="row">
+            				<div class="avatar large-2 columns">
+            					<?php echo get_avatar($comment,$size='75',$default='' ); ?>
+            				</div>
+            				<div class="large-10 columns">
+            					<?php printf(__('<h4 class="span8">%s</h4>'), get_comment_author_link()) ?>
+            					<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time('F jS, Y'); ?> </a></time>
+            					
+            					<?php edit_comment_link(__('Edit'),'<span class="edit-comment">', '</span>'); ?>
+                                
+                                <?php if ($comment->comment_approved == '0') : ?>
+                   					<div class="alert-box success">
+                      					<?php _e('Your comment is awaiting moderation.') ?>
+                      				</div>
+            					<?php endif; ?>
+                                
+                                <?php comment_text() ?>
+                                
+                                <!-- removing reply link on each comment since we're not nesting them -->
+            					<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+                            </div>
+                        </div>
+                    </div>
 				</div>
 			</article>
 	    <!-- </li> is added by wordpress automatically -->

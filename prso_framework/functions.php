@@ -792,7 +792,7 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
 	* @author	Ben Moody
 	*/
 	public function add_comments_classes( $classes ) {
-		array_push($classes, "twelve", "columns");
+		array_push($classes, "large-12", "columns");
     	return $classes;
 	}
 	

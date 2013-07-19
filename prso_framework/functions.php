@@ -250,6 +250,9 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
 	 		//Enqueue Backstretch script for background images
 	 		$this->load_backstretch_script();
 	 		
+	 		//Enqueue Waypoints script
+	 		$this->load_waypoints_script();
+	 		
 	 		//Load Modernizr script from Zurb Foundation
  			wp_register_script( 'modernizr', get_template_directory_uri() . '/javascripts/vendor/custom.modernizr.js', NULL, '4.1.1' ); 
     		wp_enqueue_script( 'modernizr' );
@@ -1433,6 +1436,71 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
 			//Enqueue script
 			wp_enqueue_script( $handle );
 		}
+		
+	}
+	
+	/**
+	* load_waypoints_script - http://imakewebthings.com/jquery-waypoints/
+	* 
+	* Registers and enqueues Waypoints script. Will try to load the CDN version
+	* if that fails then will try to load the local version.
+	*
+	* NOTE: args are set in $theme_backstretch_script_args array in config.php, comment out this
+	*		array to disable backstretch script enqueue
+	*
+	* How to use: 
+	*				 $('.thing').waypoint(function(direction) {
+					  alert('Top of thing hit top of viewport.');
+					});
+	*
+	* @access 	private
+	* @author	Ben Moody
+	*/
+	private function load_waypoints_script() {
+		
+		//Init vars
+		$backstretch_url 	= NULL;
+		$args				= array();
+		
+		$defaults = array(
+			'handle'		=>	'jquery-waypoints',
+			'script_cdn'	=>	'http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.2/waypoints.min.js',
+			'script'		=>	get_template_directory_uri() . '/javascripts/jquery/jquery.waypoints.min.js',
+			'version'		=>	'2.0.2'
+		);
+			
+		//Parse args
+		$args = wp_parse_args( $this->theme_backstretch_script_args, $defaults );
+		
+		extract($args);
+		
+		//First try and open the cdn script
+		$waypoints_url = @fopen( $script_cdn, 'r' );
+		
+		if( $waypoints_url !== FALSE ) {
+			
+			//Register cdn version
+			wp_register_script( $handle, 
+				$script_cdn, 
+				array('jquery'), 
+				$version, 
+				TRUE 
+			);
+			
+		} else {
+			
+			//Register framework version
+			wp_register_script( $handle, 
+				$script, 
+				array('jquery'), 
+				$version, 
+				TRUE 
+			);
+			
+		}
+		
+		//Enqueue script
+		wp_enqueue_script( $handle );
 		
 	}
 	

@@ -3,9 +3,29 @@ jQuery.noConflict();
 	
 	/*** Init Zurb Foundation **/
 	$(document).foundation(function(response){
-		console.log(response);
+		//console.log(response);
 	});
 	
+	// Add animation effects to content images on scroll - Except IE6,7,8 (see feature detect logic)
+	if( $.support.cssFloat ) {
+	  
+		$("#main img").css( 'visibility', 'hidden' );
+		$("#main img").waypoint( function() {
+		                                    
+			$(this).delay(100).queue(function(next){
+			    
+			    if( !$(this).hasClass("animated") ) {
+			    	//See _app-animate.scss for animation options
+			        $(this).addClass("animated fadeIn");
+			    }
+			    
+			    next();
+			
+			});                                    
+		
+		}, { offset: "99%" });
+	  
+	}
 	
 	/*** Use this js doc for all application specific JS ***/
   

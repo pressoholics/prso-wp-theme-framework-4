@@ -1,5 +1,6 @@
 
 // Global Foundation Settings
+@import "theme_styles/_colors.scss";
 @import "settings";
 
 //@import "compass"; //Loaded from Gem
@@ -60,7 +61,6 @@
 @import "theme_styles/_header.scss";
 @import "theme_styles/_footer.scss";
 @import "theme_styles/_typography.scss";
-@import "theme_styles/_colors.scss";
 @import "theme_styles/_forms.scss";
 @import "theme_styles/_shared.scss";
 @import "theme_styles/_sidebar.scss";

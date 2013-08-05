@@ -11,15 +11,15 @@ if( !class_exists('main_nav_walker') ) {
 	
 	class main_nav_walker extends Walker_Nav_Menu {
 	  
-	      function start_el(&$output, $item, $depth, $args) {
+	      function start_el(&$output, $object, $depth = 0, $args = array(), $current_object_id = 0) {
 	            global $wp_query;
 	            $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 	            
 	            $class_names = $value = '';
 	            
 	            // If the item has children, add the dropdown class for foundation
-	            if ( $args->has_children ) {
-	                $class_names = "has-dropdown ";
+	            if ( $args->has_children && ($depth == 0) ) {
+	                $class_names = "has-flyout ";
 	            }
 	            
 	            $classes = empty( $item->classes ) ? array() : (array) $item->classes;
@@ -27,7 +27,7 @@ if( !class_exists('main_nav_walker') ) {
 	            $class_names .= join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
 	            $class_names = ' class="'. esc_attr( $class_names ) . '"';
 	           
-	            $output .= $indent . '<li class="divider"></li><li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
+	            $output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
 	
 	            $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
 	            $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
@@ -43,8 +43,8 @@ if( !class_exists('main_nav_walker') ) {
 	            $item_output .= $args->link_before .apply_filters( 'the_title', $item->title, $item->ID );
 	            $item_output .= $args->link_after;
 	            // if the item has children add the caret just before closing the anchor tag
-	            if ( $args->has_children ) {
-	                $item_output .= '</a>';
+	            if ( $args->has_children && ($depth == 0) ) {
+	                $item_output .= '</a><a href="#" class="flyout-toggle"><span> </span></a>';
 	            }
 	            else{
 	                $item_output .= '</a>';
@@ -54,9 +54,9 @@ if( !class_exists('main_nav_walker') ) {
 	            $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 	        }
 	            
-	        function start_lvl(&$output, $depth) {
+	        function start_lvl(&$output, $depth = 0, $args = array()) {
 	            $indent = str_repeat("\t", $depth);
-	            $output .= "\n$indent<ul class=\"dropdown\">\n";
+	            $output .= "\n$indent<ul class=\"flyout\">\n";
 	        }
 	            
 	        function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
@@ -82,7 +82,7 @@ if( !class_exists('main_nav_walker') ) {
 if( !class_exists('footer_links_walker') ) {
 	
 	class footer_links_walker extends Walker_Nav_Menu {
-	      function start_el(&$output, $item, $depth, $args)
+	      function start_el(&$output, $object, $depth = 0, $args = array(), $current_object_id = 0)
 	      {
 	            global $wp_query;
 	            $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
@@ -112,7 +112,7 @@ if( !class_exists('footer_links_walker') ) {
 	            $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 	            }
 	            
-	        function start_lvl(&$output, $depth) {
+	        function start_lvl(&$output, $depth = 0, $args = array()) {
 	            $indent = str_repeat("\t", $depth);
 	            $output .= "\n$indent<ul class=\"flyout\">\n";
 	        }

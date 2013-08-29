@@ -253,7 +253,7 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
 	 		$this->load_waypoints_script();
 	 		
 	 		//Load Modernizr script from Zurb Foundation
- 			wp_register_script( 'modernizr', get_template_directory_uri() . '/javascripts/vendor/custom.modernizr.js', NULL, '4.1.1' ); 
+ 			wp_register_script( 'modernizr', get_template_directory_uri() . '/javascripts/vendor/custom.modernizr.js', NULL, '2.6.2' ); 
     		wp_enqueue_script( 'modernizr' );
  			
  			//Load Zurb Foundation scripts
@@ -275,12 +275,12 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
 	*/
  	private function enqueue_zurb_foundation_scripts() {
  		
- 		/** Foundation v4.1.1 **/
+ 		/** Foundation v4.3.1 **/
  		
  		wp_register_script( 'foundation-core', 
  			get_template_directory_uri() . '/javascripts/foundation/foundation.js', 
  			array('jquery'), 
- 			'4.1.1', 
+ 			'4.3.1', 
  			true 
  		);
  		wp_enqueue_script( 'foundation-core' );
@@ -289,7 +289,7 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
  		wp_register_script( 'foundation-alerts', 
  			get_template_directory_uri() . '/javascripts/foundation/foundation.alerts.js', 
  			array('foundation-core'), 
- 			'4.1.1', 
+ 			'4.3.1', 
  			true 
  		);
  		wp_enqueue_script( 'foundation-alerts' );
@@ -298,7 +298,7 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
  		wp_register_script( 'foundation-clearing', 
  			get_template_directory_uri() . '/javascripts/foundation/foundation.clearing.js', 
  			array('foundation-core'), 
- 			'4.1.1', 
+ 			'4.3.1', 
  			true 
  		);
  		wp_enqueue_script( 'foundation-clearing' );
@@ -307,7 +307,7 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
  		wp_register_script( 'foundation-cookie', 
  			get_template_directory_uri() . '/javascripts/foundation/foundation.cookie.js', 
  			array('foundation-core'), 
- 			'4.1.1', 
+ 			'4.3.1', 
  			true 
  		);
  		wp_enqueue_script( 'foundation-cookie' );
@@ -316,7 +316,7 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
  		wp_register_script( 'foundation-dropdown', 
  			get_template_directory_uri() . '/javascripts/foundation/foundation.dropdown.js', 
  			array('foundation-core'), 
- 			'4.1.1', 
+ 			'4.3.1', 
  			true 
  		);
  		wp_enqueue_script( 'foundation-dropdown' );
@@ -325,7 +325,7 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
  		wp_register_script( 'foundation-forms', 
  			get_template_directory_uri() . '/javascripts/foundation/foundation.forms.js', 
  			array('foundation-core'), 
- 			'4.1.1', 
+ 			'4.3.1', 
  			true 
  		);
  		wp_enqueue_script( 'foundation-forms' );
@@ -334,7 +334,7 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
  		wp_register_script( 'foundation-joyride', 
  			get_template_directory_uri() . '/javascripts/foundation/foundation.joyride.js', 
  			array('foundation-core'), 
- 			'4.1.1', 
+ 			'4.3.1', 
  			true 
  		);
  		wp_enqueue_script( 'foundation-joyride' );
@@ -343,7 +343,7 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
  		wp_register_script( 'foundation-magellan', 
  			get_template_directory_uri() . '/javascripts/foundation/foundation.magellan.js', 
  			array('foundation-core'), 
- 			'4.1.1', 
+ 			'4.3.1', 
  			true 
  		);
  		wp_enqueue_script( 'foundation-magellan' );
@@ -352,7 +352,7 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
  		wp_register_script( 'foundation-orbit', 
  			get_template_directory_uri() . '/javascripts/foundation/foundation.orbit.js', 
  			array('foundation-core'), 
- 			'4.1.1', 
+ 			'4.3.1', 
  			true 
  		);
  		wp_enqueue_script( 'foundation-orbit' );
@@ -361,7 +361,7 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
  		wp_register_script( 'foundation-placeholder', 
  			get_template_directory_uri() . '/javascripts/foundation/foundation.placeholder.js', 
  			array('foundation-core'), 
- 			'4.1.1', 
+ 			'4.3.1', 
  			true 
  		);
  		wp_enqueue_script( 'foundation-placeholder' );
@@ -370,7 +370,7 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
  		wp_register_script( 'foundation-reveal', 
  			get_template_directory_uri() . '/javascripts/foundation/foundation.reveal.js', 
  			array('foundation-core'), 
- 			'4.1.1', 
+ 			'4.3.1', 
  			true 
  		);
  		wp_enqueue_script( 'foundation-reveal' );
@@ -379,7 +379,7 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
  		wp_register_script( 'foundation-section', 
  			get_template_directory_uri() . '/javascripts/foundation/foundation.section.js', 
  			array('foundation-core'), 
- 			'4.1.1', 
+ 			'4.3.1', 
  			true 
  		);
  		wp_enqueue_script( 'foundation-section' );
@@ -388,7 +388,7 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
  		wp_register_script( 'foundation-tooltips', 
  			get_template_directory_uri() . '/javascripts/foundation/foundation.tooltips.js', 
  			array('foundation-core'), 
- 			'4.1.1', 
+ 			'4.3.1', 
  			true 
  		);
  		wp_enqueue_script( 'foundation-tooltips' );
@@ -397,10 +397,26 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
  		wp_register_script( 'foundation-topbar', 
  			get_template_directory_uri() . '/javascripts/foundation/foundation.topbar.js', 
  			array('foundation-core'), 
- 			'4.1.1', 
+ 			'4.3.1', 
  			true 
  		);
  		wp_enqueue_script( 'foundation-topbar' );
+ 		
+ 		wp_register_script( 'foundation-abide', 
+ 			get_template_directory_uri() . '/javascripts/foundation/foundation.abide.js', 
+ 			array('foundation-core'), 
+ 			'4.3.1', 
+ 			true 
+ 		);
+ 		wp_enqueue_script( 'foundation-abide' );
+ 		
+ 		wp_register_script( 'foundation-interchange', 
+ 			get_template_directory_uri() . '/javascripts/foundation/foundation.interchange.js', 
+ 			array('foundation-core'), 
+ 			'4.3.1', 
+ 			true 
+ 		);
+ 		wp_enqueue_script( 'foundation-interchange' );
  		
  		
  		/** Core jQuery Plugins **/
@@ -432,9 +448,9 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
 	    
 	    //NOTE if detected Child-Theme app.js will override Parent app.js
 	    if( file_exists( get_stylesheet_directory() . '/javascripts/app.js' ) ) {
-	    	wp_register_script( 'prso-theme-app', get_stylesheet_directory_uri() . '/javascripts/app.js', array('foundation-core'), '4.1.1', true ); 
+	    	wp_register_script( 'prso-theme-app', get_stylesheet_directory_uri() . '/javascripts/app.js', array('foundation-core'), '4.3.1', true ); 
 	    } else {
-	    	wp_register_script( 'prso-theme-app', get_template_directory_uri() . '/javascripts/app.js', array('foundation-core'), '4.1.1', true ); 
+	    	wp_register_script( 'prso-theme-app', get_template_directory_uri() . '/javascripts/app.js', array('foundation-core'), '4.3.1', true ); 
 	    }
 	    wp_enqueue_script( 'prso-theme-app' );
  		
@@ -471,7 +487,7 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
  	
  		if( isset($this->theme_google_jquery_url) ) {
  			wp_deregister_script( 'jquery' ); // deregisters the default WordPress jQuery  
-        	wp_register_script('jquery', $this->theme_google_jquery_url); // register the external file  
+        	wp_register_script('jquery', $this->theme_google_jquery_url, NULL, '1.10.1'); // register the external file  
         	wp_enqueue_script('jquery'); // enqueue the external file
  		}
  		

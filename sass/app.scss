@@ -1,9 +1,8 @@
-
 // Global Foundation Settings
 @import "theme_styles/_colors.scss";
 @import "settings";
 
-//@import "compass"; //Loaded from Gem
+// Comment out this import if you don't want to use normalize
 @import "normalize";
 
 // Comment out this import if you are customizing you imports below
@@ -12,9 +11,16 @@
 // Import specific parts of Foundation by commenting the import "foundation"
 // and uncommenting what you want below. You must uncomment the following if customizing
 
-// @import "foundation/foundation-global"; // *always required
 // @import "foundation/components/global"; // *always required
 // @import "foundation/components/grid";
+
+//
+// Use this grid if you want to start using the new Foundation 5 grid early.
+// It will change breakpoints to min-width: 640px and 1024px.
+//
+// @import "foundation/components/grid-5";
+//
+
 // @import "foundation/components/visibility";
 // @import "foundation/components/block-grid";
 // @import "foundation/components/type";
@@ -49,18 +55,5 @@
 // @import "foundation/components/tooltips";
 // @import "foundation/components/dropdown";
 
-// Mixins
-@import "mixins";
-
 // Pressoholics Framework Core
-@import "prso_framework/app-wordpress";
-@import "prso_framework/app-core";
-@import "prso_framework/app-animate";
-
-// Theme specific sass
-@import "theme_styles/_header.scss";
-@import "theme_styles/_footer.scss";
-@import "theme_styles/_typography.scss";
-@import "theme_styles/_forms.scss";
-@import "theme_styles/_shared.scss";
-@import "theme_styles/_sidebar.scss";
+@import "prso_framework/_app-overrides.scss";

@@ -248,7 +248,7 @@ class PrsoThemeConfig {
 	* 
 	* The url for Google jQuery library, used in front end only
 	*/
-	protected $theme_google_jquery_url = 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js';
+	protected $theme_google_jquery_url = 'http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js';
 
  
 /******************************************************************

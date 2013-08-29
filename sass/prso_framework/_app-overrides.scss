@@ -1,0 +1,13 @@
+// Pressoholics Framework Core
+@import "_mixins.scss";
+@import "prso_framework/_app-wordpress.scss";
+@import "prso_framework/_app-core.scss";
+@import "prso_framework/_app-animate.scss";
+
+// Theme specific sass
+@import "theme_styles/_header.scss";
+@import "theme_styles/_footer.scss";
+@import "theme_styles/_typography.scss";
+@import "theme_styles/_forms.scss";
+@import "theme_styles/_shared.scss";
+@import "theme_styles/_sidebar.scss";

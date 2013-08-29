@@ -19,7 +19,7 @@ if( !class_exists('main_nav_walker') ) {
 	            
 	            // If the item has children, add the dropdown class for foundation
 	            if ( $args->has_children && ($depth == 0) ) {
-	                $class_names = "has-flyout ";
+	                $class_names = "has-dropdown ";
 	            }
 	            
 	            $classes = empty( $item->classes ) ? array() : (array) $item->classes;
@@ -56,7 +56,7 @@ if( !class_exists('main_nav_walker') ) {
 	            
 	        function start_lvl(&$output, $depth = 0, $args = array()) {
 	            $indent = str_repeat("\t", $depth);
-	            $output .= "\n$indent<ul class=\"flyout\">\n";
+	            $output .= "\n$indent<ul class=\"dropdown\">\n";
 	        }
 	            
 	        function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {

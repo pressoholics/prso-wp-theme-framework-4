@@ -1,5 +1,10 @@
 /* Custom Sass Mixins */
 
+// Helper to strip units from a var -- (24px == 24)
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
 /* Convert PX units to REMs and add px fallback of property.
 Ex: @include rem(line-height, 25px);
 */

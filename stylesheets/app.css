@@ -7978,40 +7978,60 @@ a[class^='tag-link-']:hover {
   clear: both;
 }
 
-/**** Gravity Forms - Adjust any gforms dom elements to meet foundation style */
+/**** Foudnation Overrides ****/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ben\/Documents\/Development\/vhost\/www\.pressoholics\.dev\/wp-content\/themes\/pressotheme-4\/sass\/prso_framework\/_app-core\.scss}line{font-family:\0000328}}
+[data-clearing] {
+  margin-right: 0;
+}
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ben\/Documents\/Development\/vhost\/www\.pressoholics\.dev\/wp-content\/themes\/pressotheme-4\/sass\/prso_framework\/_app-core\.scss}line{font-family:\0000330}}
+[data-clearing] li {
+  margin-right: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ben\/Documents\/Development\/vhost\/www\.pressoholics\.dev\/wp-content\/themes\/pressotheme-4\/sass\/prso_framework\/_app-core\.scss}line{font-family:\0000335}}
+.clearing-assembled .clearing-container .carousel > ul li {
+  clear: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ben\/Documents\/Development\/vhost\/www\.pressoholics\.dev\/wp-content\/themes\/pressotheme-4\/sass\/prso_framework\/_app-core\.scss}line{font-family:\0000339}}
+.clearing-caption {
+  bottom: 50px;
+}
+
+/**** Gravity Forms - Adjust any gforms dom elements to meet foundation style */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ben\/Documents\/Development\/vhost\/www\.pressoholics\.dev\/wp-content\/themes\/pressotheme-4\/sass\/prso_framework\/_app-core\.scss}line{font-family:\0000345}}
 span.gform_description {
   display: block;
   line-height: 1.6;
   margin-bottom: 17px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ben\/Documents\/Development\/vhost\/www\.pressoholics\.dev\/wp-content\/themes\/pressotheme-4\/sass\/prso_framework\/_app-core\.scss}line{font-family:\0000336}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ben\/Documents\/Development\/vhost\/www\.pressoholics\.dev\/wp-content\/themes\/pressotheme-4\/sass\/prso_framework\/_app-core\.scss}line{font-family:\0000351}}
 .gform_wrapper li {
   list-style: none;
 }
 
 /* Hide input counter */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ben\/Documents\/Development\/vhost\/www\.pressoholics\.dev\/wp-content\/themes\/pressotheme-4\/sass\/prso_framework\/_app-core\.scss}line{font-family:\0000341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ben\/Documents\/Development\/vhost\/www\.pressoholics\.dev\/wp-content\/themes\/pressotheme-4\/sass\/prso_framework\/_app-core\.scss}line{font-family:\0000356}}
 .ginput_counter {
   display: none;
 }
 
 /* Validation */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ben\/Documents\/Development\/vhost\/www\.pressoholics\.dev\/wp-content\/themes\/pressotheme-4\/sass\/prso_framework\/_app-core\.scss}line{font-family:\0000347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ben\/Documents\/Development\/vhost\/www\.pressoholics\.dev\/wp-content\/themes\/pressotheme-4\/sass\/prso_framework\/_app-core\.scss}line{font-family:\0000362}}
 .gfield_required,
 .gfield_error label {
   color: #C60F13;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ben\/Documents\/Development\/vhost\/www\.pressoholics\.dev\/wp-content\/themes\/pressotheme-4\/sass\/prso_framework\/_app-core\.scss}line{font-family:\0000351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ben\/Documents\/Development\/vhost\/www\.pressoholics\.dev\/wp-content\/themes\/pressotheme-4\/sass\/prso_framework\/_app-core\.scss}line{font-family:\0000366}}
 .gfield_error input {
   background-color: rgba(198, 15, 19, 0.1);
   border-color: #C60F13;
 }
 
 /* Main Content */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ben\/Documents\/Development\/vhost\/www\.pressoholics\.dev\/wp-content\/themes\/pressotheme-4\/sass\/prso_framework\/_app-core\.scss}line{font-family:\0000358}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ben\/Documents\/Development\/vhost\/www\.pressoholics\.dev\/wp-content\/themes\/pressotheme-4\/sass\/prso_framework\/_app-core\.scss}line{font-family:\0000373}}
 article ul, article ol, article dl {
   padding-left: 40px;
   padding-left: remCalc(40px);
@@ -8019,7 +8039,7 @@ article ul, article ol, article dl {
 
 /**** Footer */
 /* Hide 'flyout' menu items in footer menu */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ben\/Documents\/Development\/vhost\/www\.pressoholics\.dev\/wp-content\/themes\/pressotheme-4\/sass\/prso_framework\/_app-core\.scss}line{font-family:\0000367}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ben\/Documents\/Development\/vhost\/www\.pressoholics\.dev\/wp-content\/themes\/pressotheme-4\/sass\/prso_framework\/_app-core\.scss}line{font-family:\0000382}}
 .footer-links ul.flyout {
   display: none;
 }
@@ -8027,24 +8047,24 @@ article ul, article ol, article dl {
 /**** Media Queries */
 /* Medium Screens AND Landscape - iPad */
 @media only screen and (max-width: 1279px) and (min-width: 768px) and (orientation: landscape) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ben\/Documents\/Development\/vhost\/www\.pressoholics\.dev\/wp-content\/themes\/pressotheme-4\/sass\/prso_framework\/_app-core\.scss}line{font-family:\0000377}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ben\/Documents\/Development\/vhost\/www\.pressoholics\.dev\/wp-content\/themes\/pressotheme-4\/sass\/prso_framework\/_app-core\.scss}line{font-family:\0000392}}
   .show-for-medium-landscape {
     display: inherit !important;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ben\/Documents\/Development\/vhost\/www\.pressoholics\.dev\/wp-content\/themes\/pressotheme-4\/sass\/prso_framework\/_app-core\.scss}line{font-family:\0000381}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ben\/Documents\/Development\/vhost\/www\.pressoholics\.dev\/wp-content\/themes\/pressotheme-4\/sass\/prso_framework\/_app-core\.scss}line{font-family:\0000396}}
   .hide-for-medium-landscape {
     display: none !important;
   }
 }
 /* Medium Screens AND Portrait - iPad */
 @media only screen and (max-width: 1279px) and (min-width: 768px) and (orientation: portrait) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ben\/Documents\/Development\/vhost\/www\.pressoholics\.dev\/wp-content\/themes\/pressotheme-4\/sass\/prso_framework\/_app-core\.scss}line{font-family:\0000390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ben\/Documents\/Development\/vhost\/www\.pressoholics\.dev\/wp-content\/themes\/pressotheme-4\/sass\/prso_framework\/_app-core\.scss}line{font-family:\00003105}}
   .show-for-medium-portrait {
     display: inherit !important;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ben\/Documents\/Development\/vhost\/www\.pressoholics\.dev\/wp-content\/themes\/pressotheme-4\/sass\/prso_framework\/_app-core\.scss}line{font-family:\0000394}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ben\/Documents\/Development\/vhost\/www\.pressoholics\.dev\/wp-content\/themes\/pressotheme-4\/sass\/prso_framework\/_app-core\.scss}line{font-family:\00003109}}
   .hide-for-medium-portrait {
     display: none !important;
   }

@@ -999,7 +999,8 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
 	* @access 	public
 	* @author	Ben Moody
 	*/
-	public function custom_wp_nav_menu($css_class, $item) {
+	public function custom_wp_nav_menu( $css_class, $item ) {
+		
         //Remove 'current_page_parent' from blog menu item when not a blog page
         if( get_post_type() !== 'post' ) {
 
@@ -1018,6 +1019,11 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
 		    
 	    }
 	    
+	    //Is active page?
+        if( $post->ID == $item->object_id ) {
+            $css_class[] = 'active';
+        }
+	    
 	    return $css_class;
 	}
 	
@@ -1032,9 +1038,12 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
 	public function current_to_active($text){
         $replace = array(
                 //List of menu item classes that should be changed to "active"
-                'current_page_item' => 'active',
-                'current_page_parent' => 'active',
+                'current_page_item' 	=> 'active',
+                'current_page_parent' 	=> 'active',
                 'current_page_ancestor' => 'active',
+                'current-menu-item' 	=> 'active',
+                'current-menu-parent' 	=> 'active',
+                'current-menu-ancestor' => 'active',
         );
         $text = str_replace(array_keys($replace), $replace, $text);
         

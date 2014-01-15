@@ -33,13 +33,6 @@
 	protected $theme_helpers = NULL;
 	
 	/**
-	* The full path to the directory which holds "views", WITHOUT a trailing DS.
-	*
-	*/
-	protected $theme_views = NULL;
-	protected $child_theme_views = NULL; //Path to child theme framework views folder if child theme is active
-	
-	/**
 	* Unique slug prepended to all class names
 	*
 	*/
@@ -85,12 +78,6 @@
 	 		//Instantiate helpers
 	 		$this->load_helpers();
 	 		
-	 		//Scan the views dir
-	 		$this->views_scan = $this->scan_views();
-	 		
-	 		//If user is admin load admin views
-	 		$this->load_admin_views();
-	 		
 	 		//Load general app functions
 	 		$this->load_app_functions();
 	 		
@@ -104,12 +91,32 @@
  			$this->load_orbit_banner();
  			
  		} else {
-		
-			//Error loading app controller
-			wp_die( wp_sprintf( '%1s: ' . __( 'Sorry, this theme requires the Pressoholics framework plugin to work.', 'prso_core' ), __FILE__ ) );
+			
+			if( !function_exists('is_plugin_active') ) {
+				include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+			}
+			
+			//Prso Core plugin
+			$parent_path 	= 'presso-core/presso-core.php';
+	
+			//Check that parent class is active
+			if( !is_plugin_active($parent_path) ) {
+				
+				//Parent plugin not active -- do something!!
+				add_action( 'admin_notices', array($this, 'prso_core_missing_admin_notice') );
+				
+			}
 			
 		}
  		
+ 	}
+ 	
+ 	public function prso_core_missing_admin_notice() {
+	 	
+	 	echo '<div class="error">
+	       <p>WARNING, Your theme requires the Pressoholics framework plugin to work!!!</p>
+	    </div>';
+	 	
  	}
  	
  	/**
@@ -204,49 +211,6 @@
  			}
  			
  		}
- 		
- 	}
- 	
- 	/**
-	* scan_views
-	* 
-	* Scans theme framework views dir, caches any files found in
-	* $this->views_scan array.
-	*
-	* Returns false on error
-	* 
-	*/
- 	private function scan_views() {
- 			
- 		//Init vars
- 		$result = false;
- 		$args	= array(
-			'plugin_views_dir' 			=> $this->theme_views,
-			'plugin_child_views_dir'	=> $this->child_theme_views
-		);
- 		 		
- 		$result = apply_filters( 'prso_core_scan_plugin_views', $result, $args );
- 		
- 		return $result;
- 	}
- 	
- 	/**
-	* load_admin
-	* 
-	* Detects if user is logged in, if so then it detects the theme framework admin view
-	* file in $this->theme_views dir and creates an instance of the class.
-	* 
-	*/
- 	private function load_admin_views() {
- 		
- 		$args = array(
-			'views_scan' 				=> $this->views_scan,
-			'plugin_class_slug'			=> $this->theme_class_slug,
-			'plugin_views_dir'			=> $this->theme_views,
-			'plugin_child_views_dir'	=> $this->child_theme_views
-		);
- 		
- 		do_action( 'prso_core_load_plugin_views', $args );
  		
  	}
  	

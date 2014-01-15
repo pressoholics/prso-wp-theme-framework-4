@@ -53,6 +53,7 @@
  * 39. update_post_views	-	Adds a view counter to posts/pages
  * 40. add_nav_parent_child_classes	-	Filter to add nav depth specific css classes to nav items
  * 41. init_theme_shortcodes	-	Include theme custom shortcodes
+ * 42. init_theme_options	-	Include theme options framework
  *
  */
 class PrsoThemeFunctions extends PrsoThemeAppController {
@@ -164,6 +165,9 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
  		
  		//Call method to include theme Shortcodes
  		$this->init_theme_shortcodes();
+ 		
+ 		//Call method to setup theme options
+ 		add_action( 'init', array($this, 'init_theme_options') );
  		
  	}
  	
@@ -1664,6 +1668,34 @@ class PrsoThemeFunctions extends PrsoThemeAppController {
 	private function init_theme_shortcodes() {
 		
 		get_template_part( 'shortcodes' );
+		
+	}
+	
+	/**
+	* init_theme_options
+	* 
+	* Includes the theme shortcode file
+	* Includes file to load all theme shortcodes
+	*
+	* @access 	private
+	* @author	Ben Moody
+	*/
+	public function init_theme_options() {
+		
+		//Init vars
+		$framework_inc 		= get_template_directory() . '/prso_framework/includes/ReduxFramework/ReduxCore/framework.php';
+		$framework_config	= get_template_directory() . '/prso_framework/includes/ReduxConfig/ReduxConfig.php';
+		
+		//Try and load redux framework
+		if ( !class_exists('ReduxFramework') && file_exists($framework_inc) ) {
+			require_once( $framework_inc );
+		}
+		
+		//Try and load redux config for this plugin
+		if ( file_exists($framework_config) ) {
+			
+			require_once( $framework_config );
+		}
 		
 	}
 	

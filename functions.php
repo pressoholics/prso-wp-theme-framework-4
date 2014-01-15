@@ -5,6 +5,18 @@ URL: htp://www.BenjaminMoody.com
 Version: 2.0
 */
 
+/******************************************************************
+ * 	Version
+ *
+ *****************************************************************/
+ define( 'PRSOTHEMEFRAMEWORK__VERSION', '2.0' );
+
+/******************************************************************
+ * 	Text Domain
+ *
+ *****************************************************************/
+ define( 'PRSOTHEMEFRAMEWORK__DOMAIN', 'prso-theme-domain' );
+
 /**
 * ADD CUSTOM THEME FUNCTIONS HERE -----
 *
